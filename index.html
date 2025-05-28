@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <title>Isaias Quintero - COP4813</title>
     <style>
-        body {
-            color: white; /* Ensure text is readable on dark backgrounds */
+        body
+        {
+            color: white; /* This makes it so it's readable on most backgrounds */
             transition: background-color 0.5s ease;
         }
     </style>
@@ -22,27 +23,33 @@
 
     <script>
         // Function to determine background color based on current hour
-        function setBackgroundColor() {
+        function setBackgroundColor() 
+        {
             const now = new Date();
             const hour = now.getHours();
             let bgColor;
 
-            if (hour >= 6 && hour < 12) {
+            if (hour >= 6 && hour < 12) 
+            {
                 // Morning: 6am–12pm
-                bgColor = '#000000'; // Gold
-            } else if (hour >= 12 && hour < 18) {
+                bgColor = '#CEB888'; // Gold
+            } else if (hour >= 12 && hour < 18) 
+            {
                 // Afternoon: 12pm–6pm
                 bgColor = '#782F40'; // Garnet
-            } else if (hour >= 18 && hour < 21) {
+            } else if (hour >= 18 && hour < 21) 
+            {
                 // Evening: 6pm–9pm
                 bgColor = '#999999'; // Gray
-            } else {
+            } else 
+            {
                 // Night: 9pm–6am
                 bgColor = '#000000'; // Black
             }
 
             document.body.style.backgroundColor = bgColor;
         }
+        // The color palette is the FSU Garnet and Gold colors
 
         // Call the function when the page loads
         window.onload = setBackgroundColor;
