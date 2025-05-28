@@ -25,3 +25,26 @@ Source code files:
 - index.html (main and sole file at the moment)
 
 All work done by Isaias Quintero (ijq21).
+
+May 28th, 2025:
+Assignment 2 instructions:
+
+    The goal of this assignment is to create a dynamic HTML webpage that
+    visually responds to the time of day by changing its background color. 
+    Students will design the page using HTML and JavaScript, 
+    then deploy it to a publicly accessible hosting platform.
+
+Expanded on the webpage, adding javascript to the index.html itself
+
+Functionality:
+- HTML page displays information
+- Background color changes depending on time of day
+
+Known issues:
+- The javascript is currently local, but if it gets more complex, it would be useful to have it 
+in an external file dedicated to the Javascript.
+
+Source code files:
+- index.html (main and sole file at the moment)
+
+All work done by Isaias Quintero (ijq21)
