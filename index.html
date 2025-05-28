@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <title>Isaias Quintero - COP4813</title>
+    <style>
+        body {
+            color: white; /* Ensure text is readable on dark backgrounds */
+            transition: background-color 0.5s ease;
+        }
+    </style>
 </head>
 <body>
     <!-- The information below is what was specifically asked for in Assignment 1 -->
@@ -13,5 +19,33 @@
     <footer>
         <p>&copy; 2025 Isaias Quintero</p>
     </footer>
+
+    <script>
+        // Function to determine background color based on current hour
+        function setBackgroundColor() {
+            const now = new Date();
+            const hour = now.getHours();
+            let bgColor;
+
+            if (hour >= 6 && hour < 12) {
+                // Morning: 6am–12pm
+                bgColor = '#CEB888'; // Gold
+            } else if (hour >= 12 && hour < 18) {
+                // Afternoon: 12pm–6pm
+                bgColor = '#782F40'; // Garnet
+            } else if (hour >= 18 && hour < 21) {
+                // Evening: 6pm–9pm
+                bgColor = '#999999'; // Gray
+            } else {
+                // Night: 9pm–6am
+                bgColor = '#000000'; // Black
+            }
+
+            document.body.style.backgroundColor = bgColor;
+        }
+
+        // Call the function when the page loads
+        window.onload = setBackgroundColor;
+    </script>
 </body>
 </html>
