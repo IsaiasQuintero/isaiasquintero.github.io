@@ -48,3 +48,32 @@ Source code files:
 - index.html (main and sole file at the moment)
 
 All work done by Isaias Quintero (ijq21)
+
+June 11th, 2025:
+Assignment 3 instructions:
+
+- Expand on the time-based interactivity by adding an image that changes depending on the user’s local time of day (morning, afternoon, or night).
+
+- Use JavaScript to determine time and modify the image dynamically.
+
+- Continue using a public hosting platform (GitHub Pages).
+
+Functionality:
+
+- HTML page displays information
+
+- Background color changes based on time of day
+
+- A relevant image (sunrise, daytime, or nighttime scene) is shown depending on the current time
+
+Known issues:
+
+- The image sources are hotlinked from external URLs, so the site depends on third-party hosting for images
+
+- Still no backend or data persistence
+
+Source code files:
+
+- index.html (updated with embedded JavaScript and image logic)
+
+All work done by Isaias Quintero (ijq21)
