@@ -77,3 +77,70 @@ Source code files:
 - index.html (updated with embedded JavaScript and image logic)
 
 All work done by Isaias Quintero (ijq21)
+
+June 18th, 2025:
+Assignment 4 instructions:
+
+    Design and implement a multi-page website with a nested menu structure.
+
+    The homepage displays three subjects: Music, Physics, and Astronomy.
+
+    Clicking a subject reveals four related topics beneath it.
+
+    Each topic links to a dedicated topic page with a heading, a short paragraph, and an embedded YouTube video.
+
+    Each topic page includes a “Back” button that returns the user to the homepage, resetting the view to only the three main subjects.
+
+    Use HTML, CSS, and JavaScript to build a responsive nested navigation menu.
+
+    Deploy the entire project on a public hosting platform (GitHub Pages).
+
+Functionality:
+
+    Homepage with three clickable subjects, each revealing four topics dynamically
+
+    Twelve topic pages (four per subject) with relevant content and embedded videos
+
+    Working “Back” buttons on all topic pages returning to homepage
+
+    Time-based background and image from previous assignments maintained
+
+    Responsive and intuitive navigation with show/hide topic menus implemented in JavaScript
+
+Known issues:
+
+    The site relies on hotlinked YouTube videos and images, requiring internet connectivity
+
+    All JavaScript is embedded within HTML files; separating into external files could improve maintainability
+
+    No backend or database functionality included
+
+Source code files:
+
+    index.html (updated with nested menu and navigation logic)
+
+    topics/music-theory.html
+
+    topics/music-choir.html
+
+    topics/music-orchestra.html
+
+    topics/music-history.html
+
+    topics/physics-mechanics.html
+
+    topics/physics-thermodynamics.html
+
+    topics/physics-optics.html
+
+    topics/physics-electricity.html
+
+    topics/astronomy-planets.html
+
+    topics/astronomy-stars.html
+
+    topics/astronomy-cosmology.html
+
+    topics/astronomy-telescopes.html
+
+All work done by Isaias Quintero (ijq21)
