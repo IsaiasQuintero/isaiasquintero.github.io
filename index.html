@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <title>Isaias Quintero - COP4813</title>
     <style>
         body {
-            color: white; /* Makes text readable on most backgrounds */
+            color: white;
+            background-color: black;
             transition: background-color 0.5s ease;
-            text-align: center; /* Center align content */
+            text-align: center;
             font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 5px;
+        }
+        p {
+            margin-top: 5px;
+        }
+        footer {
+            margin-top: 40px;
         }
         img {
             max-width: 90%;
@@ -17,54 +28,133 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px #00000088;
         }
+
+        /* Subject & topic menu styles */
+        #subjects {
+            margin-top: 40px;
+        }
+        .subject {
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .subject h3 {
+            background-color: #444;
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        .topics {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        .topics li {
+            margin: 5px 0;
+        }
+        .topics a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .topics a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <!-- The information below is what was specifically asked for in Assignment 1 -->
+    <!-- Static information from Assignment 1 -->
     <h1>Isaias Quintero</h1>
     <p>COP4813: Web Applications Programming</p>
     <p>Major: Computer Science</p>
     <p>End of line. Flynn lives!</p>
 
-    <!-- Image container that will change based on time of day -->
+    <!-- Image that changes with time of day -->
     <img id="timeImage" src="" alt="Time of Day Image" />
 
+    <!-- New section for subject/topic navigation -->
+    <div id="subjects">
+        <h2>Select a Subject</h2>
+
+        <!-- MUSIC SUBJECT -->
+        <div class="subject" onclick="toggleTopics('music')">
+            <h3>Music</h3>
+            <ul id="music" class="topics" style="display: none;">
+                <li><a href="topics/music-theory.html">Theory</a></li>
+                <li><a href="topics/music-choir.html">Choir</a></li>
+                <li><a href="topics/music-orchestra.html">Orchestra</a></li>
+                <li><a href="topics/music-history.html">History</a></li>
+            </ul>
+        </div>
+
+        <!-- PHYSICS SUBJECT -->
+        <div class="subject" onclick="toggleTopics('physics')">
+            <h3>Physics</h3>
+            <ul id="physics" class="topics" style="display: none;">
+                <li><a href="topics/physics-mechanics.html">Mechanics</a></li>
+                <li><a href="topics/physics-thermodynamics.html">Thermodynamics</a></li>
+                <li><a href="topics/physics-optics.html">Optics</a></li>
+                <li><a href="topics/physics-electricity.html">Electricity</a></li>
+            </ul>
+        </div>
+
+        <!-- ASTRONOMY SUBJECT -->
+        <div class="subject" onclick="toggleTopics('astronomy')">
+            <h3>Astronomy</h3>
+            <ul id="astronomy" class="topics" style="display: none;">
+                <li><a href="topics/astronomy-planets.html">Planets</a></li>
+                <li><a href="topics/astronomy-stars.html">Stars</a></li>
+                <li><a href="topics/astronomy-cosmology.html">Cosmology</a></li>
+                <li><a href="topics/astronomy-telescopes.html">Telescopes</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Isaias Quintero</p>
     </footer>
 
     <script>
-        // Function to change background color and image based on time of day
+        // Set time-based background color and image
         function setTimeBasedTheme() {
             const now = new Date();
             const hour = now.getHours();
             let bgColor;
             let imageUrl;
 
-            // Morning: 6am–12pm
             if (hour >= 6 && hour < 12) {
+                // Morning: 6am–12pm
                 bgColor = '#CEB888'; // Gold
                 imageUrl = 'https://cdn.pixabay.com/photo/2018/02/03/15/40/landscape-3127859_960_720.jpg';
-            } 
-            // Afternoon: 12pm–6pm
-            else if (hour >= 12 && hour < 18) {
+            } else if (hour >= 12 && hour < 18) {
+                // Afternoon: 12pm–6pm
                 bgColor = '#782F40'; // Garnet
                 imageUrl = 'https://cdn.pixabay.com/photo/2025/02/07/08/46/cat-9389500_960_720.jpg';
-            } 
-            // Evening/Night: 6pm–6am
-            else {
+            } else {
+                // Evening/Night: 6pm–6am
                 bgColor = '#000000'; // Black
                 imageUrl = 'https://cdn.pixabay.com/photo/2024/12/14/15/37/aurora-borealis-9267515_960_720.jpg';
             }
 
-            // Apply background color
             document.body.style.backgroundColor = bgColor;
-
-            // Set image source
             document.getElementById('timeImage').src = imageUrl;
         }
 
-        // Run the function when the page loads
+        // Show only the clicked subject's topics, hide others
+        function toggleTopics(id) {
+            const allTopics = document.querySelectorAll('.topics');
+            allTopics.forEach(t => {
+                if (t.id === id) {
+                    // Toggle selected topic list
+                    t.style.display = (t.style.display === 'none') ? 'block' : 'none';
+                } else {
+                    // Hide all other topic lists
+                    t.style.display = 'none';
+                }
+            });
+        }
+
+        // Run when page loads
         window.onload = setTimeBasedTheme;
     </script>
 </body>
